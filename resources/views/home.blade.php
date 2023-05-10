@@ -3,8 +3,8 @@
     @section('title', $title)
     
     <div class="p-4 sm:ml-64">
-        <div class="p-4 rounded-lg mt-14 ">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 ">
+        <div class="p-4 rounded-lg mt-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div class="flex flex-col p-4 rounded bg-white shadow">
                     <div class="text-xl items-center flex gap-2 mb-4">
                         <i class="pt-0.5 mdi mdi-ticket text-sky-800"></i>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-sm text-left text-gray-500 whitespace-nowrap">
-                            <thead class="text-xs text-gray-700 uppercase bg-slate-100">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Transaction
@@ -105,27 +105,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-            <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-                <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-            </div>
-            
-            <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-                <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-                </div>
-                <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-                </div>
-                <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-                </div>
-                <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
                 </div>
             </div>
         </div>

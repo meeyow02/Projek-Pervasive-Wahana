@@ -9,18 +9,19 @@
     <style>
     @import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css");
     </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    @livewireStyles
+    @wireUiScripts
+    @livewireScripts
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
 </head>
-<body>
+<body class="bg-gray-50">
     {{-- SIDEBAR --}}
     
     <x-sidebar />
 
-    <main class="bg-slate-50">
+    <main>
         
         {{ $slot }}
 

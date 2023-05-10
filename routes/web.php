@@ -18,3 +18,15 @@ Route::get('/', function () {
         'title' => 'Home'
     ]);
 })->name('home');
+
+Route::get('/setting', function () {
+    return view('pages.setting', [
+        'title' => 'Setting'
+    ]);
+})->name('setting');
+
+Route::get('/balance', function () {
+    return view('pages.balance', [
+        'title' => 'Balance'
+    ]);
+})->name('balance');
