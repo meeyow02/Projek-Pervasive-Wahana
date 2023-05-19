@@ -1,8 +1,7 @@
 <x-app-layout>
     @section('title', $title)
 
-    <div class="p-4 sm:ml-64">
-        <div class="mt-20">
+    <div class="p-4">
             <div class="grid grid-cols-1 gap-4 mb-6">
                 <div class="flex flex-col rounded ">
                     <div class="flex flex-col gap-2 font-sans">
@@ -88,12 +87,11 @@
                                     </div>
                                 </form>
                             </div>
-                            
+
                         </div>
-                </div>                
+                </div>
             </div>
-        </div>
     </div>
-    
+
 </x-app-layout>
 
