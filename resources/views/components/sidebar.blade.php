@@ -3,11 +3,11 @@
         <div class="flex flex-wrap justify-between items-center">
             <div class="flex justify-start items-center">
                 <button @click="open = !open" x-bind:class="{ 'focus:outline-none focus:ring-2 focus:ring-gray-200 bg-gray-100': open }" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mx-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100">
-                <svg x-show="open" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path></svg>                    
+                <svg x-show="open" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path></svg>
                 <svg x-show="!open" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </button>
                 <a href="https://flowbite.com" class="flex mr-4">
-                  <img src="/assets/img/amusement-park.png" class="mr-3 h-10" alt="FlowBite Logo" />
+                  <img src="{{ asset('/assets/img/amusement-park.png') }}" class="mr-3 h-10" alt="FlowBite Logo" />
                 </a>
               </div>
             <div x-data="{ profile_open: false }" class="relative flex items-center lg:order-2">
@@ -21,7 +21,7 @@
                     <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                 </button>
                 <!-- Dropdown menu -->
-                <div x-show="profile_open" class="absolute mt-14 right-0 top-0 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow">                    
+                <div x-show="profile_open" class="absolute mt-14 right-0 top-0 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow">
                     <div class="py-3 px-4">
                         <span class="block text-sm font-semibold text-gray-900 ">Neil sims</span>
                         {{-- <span class="block text-sm font-light text-gray-500 truncate">Saldo</span> --}}
@@ -82,10 +82,10 @@
                     </ul>
                 </li>
                 <li>
-                    <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100" aria-controls="dropdown-vending" data-collapse-toggle="dropdown-vending">
+                    <a href="{{ route('vending-machine') }}" type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100" aria-controls="dropdown-vending" data-collapse-toggle="dropdown-vending">
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
                         <span class="flex-1 ml-3 text-left whitespace-nowrap">Vending Machine</span>
-                    </button>
+                    </a>
 
             </ul>
             <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200">
@@ -103,9 +103,8 @@
                 </li>
             </ul>
         </div>
-    </div>
     </aside>
-    <div x-show="open" class="fixed inset-0 transform transition-all" x-on:click="open = false" x-transition:enter="ease-out duration-300"
+    <div x-show="open" class="z-30 fixed inset-0 transform transition-all" x-on:click="open = false" x-transition:enter="ease-out duration-300"
                     x-transition:enter-start="opacity-0"
                     x-transition:enter-end="opacity-100"
                     x-transition:leave="ease-in duration-200"

@@ -30,3 +30,9 @@ Route::get('/balance', function () {
         'title' => 'Balance'
     ]);
 })->name('balance');
+
+Route::get('/vending', function () {
+    return view('pages.vending', [
+        'title' => 'Vending Machine'
+    ]);
+})->name('vending-machine');
