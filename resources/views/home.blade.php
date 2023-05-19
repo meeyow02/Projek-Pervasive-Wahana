@@ -30,7 +30,8 @@
                     <span class="font-sans text-4xl font-bold">400.000</span>
                 </div>
 
-                <a href="#" class="mt-6 px-4 py-2 text-sm font-semibold text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Top Up</a>
+                <a href="{{ route('topup') }}" class="mt-6 px-4 py-2 text-sm font-semibold text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Top Up</a>
+                
             </div>
 
         </div>

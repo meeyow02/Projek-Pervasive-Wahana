@@ -31,6 +31,12 @@ Route::get('/balance', function () {
     ]);
 })->name('balance');
 
+Route::get('/top-up', function () {
+    return view('pages.topup', [
+        'title' => 'Top Up'
+    ]);
+})->name('topup');
+
 Route::get('/vending', function () {
     return view('pages.vending', [
         'title' => 'Vending Machine'
