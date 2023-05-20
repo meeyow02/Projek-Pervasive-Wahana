@@ -37,6 +37,12 @@ Route::get('/top-up', function () {
     ]);
 })->name('topup');
 
+Route::get('/pricing', function () {
+    return view('pages.pricing', [
+        'title' => 'Pricing'
+    ]);
+})->name('pricing');
+
 Route::get('/vending', function () {
     return view('pages.vending', [
         'title' => 'Vending Machine'
