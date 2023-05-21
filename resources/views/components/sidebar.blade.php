@@ -43,69 +43,42 @@
             </div>
         </div>
     </nav>
-    <aside id="default-sidebar" x-bind:class="{ 'transform-none': open, '-translate-x-full': ! open }" class="pt-16 fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0" aria-label="Sidenav">
+    <aside id="default-sidebar" x-bind:class="{ 'transform-none': open, '-translate-x-full': ! open }" class="pt-16 fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0 will-change-transform transform-gpu" aria-label="Sidenav">
         <div class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200">
             <ul class="space-y-2">
-                <li>
-                    <a href="/">
-                        <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 " aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                            {{-- <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg> --}}
-                            <i class="pt-0.5 mdi mdi-home text-gray-400 text-xl"></i>
-                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Dashboard</span>
-                        </button>
-                    </a>
-                </li>
+                <x-navigation-links icon="mdi-home" :href="route('home')" :active="request()->routeIs('home')">
+                    Dashboard
+                </x-navigation-links>
 
-                <li>
-                    <a href="/">
-                        <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 " aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                            {{-- <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg> --}}
-                            <i class="pt-0.5 mdi mdi-go-kart text-gray-400 text-xl"></i>
-                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Rides</span>
-                        </button>
-                    </a>
-                </li>
+                <x-navigation-links icon="mdi-go-kart" >
+                    Rides
+                </x-navigation-links>
 
-                <li>
-                    <a href="/">
-                        <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 " aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                            <i class="pt-0.5 mdi mdi-silverware-variant text-gray-400 text-xl"></i>
-                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Restaurant</span>
-                        </button>
-                    </a>
-                </li>
+                <x-navigation-links icon="mdi-silverware-variant" :href="route('restaurant')" :active="request()->routeIs('restaurant')">
+                    Restaurant
+                </x-navigation-links>
 
-                <li>
-                    <a href="{{ route('vending-machine') }}" type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100" aria-controls="dropdown-vending" data-collapse-toggle="dropdown-vending">
-                        <i class="pt-0.5 mdi mdi-cupboard text-gray-400 text-xl"></i>
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Vending Machine</span>
-                    </a>
-                </li>
+                <x-navigation-links icon="mdi-cupboard" :href="route('vending-machine')" :active="request()->routeIs('vending-machine')">
+                    Vending Machine
+                </x-navigation-links>
 
             </ul>
             <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200">
-                <li>
-                    <a href="{{ route('balance') }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75  group hover:bg-gray-100">
-                        <i class="pt-0.5 mdi mdi-wallet text-gray-400 text-xl"></i>
-                        <span class="ml-3">Balance</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('pricing') }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75  group hover:bg-gray-100">
-                        <i class="pt-0.5 mdi mdi-tag-text-outline text-gray-400 text-xl"></i>
-                        <span class="ml-3">Pricing</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('setting') }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75  group hover:bg-gray-100">
-                        <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
-                        <span class="ml-3">Setting</span>
-                    </a>
-                </li>
+                <x-navigation-links icon="mdi-wallet" :href="route('balance')" :active="request()->routeIs('balance')">
+                    Balance
+                </x-navigation-links>
+
+                <x-navigation-links icon="mdi-tag-text-outline" :href="route('pricing')" :active="request()->routeIs('pricing')">
+                    Pricing
+                </x-navigation-links>
+
+                <x-navigation-links icon="mdi-cog" :href="route('setting')" :active="request()->routeIs('setting')">
+                    Setting
+                </x-navigation-links>
             </ul>
         </div>
     </aside>
-    <div x-show="open" class="z-30 fixed inset-0 transform transition-all" x-on:click="open = false" x-transition:enter="ease-out duration-300"
+    <div x-show="open" class="z-30 fixed inset-0 transform transition-transform min-h-screen" x-on:click="open = false" x-transition:enter="ease-out duration-300"
                     x-transition:enter-start="opacity-0"
                     x-transition:enter-end="opacity-100"
                     x-transition:leave="ease-in duration-200"
