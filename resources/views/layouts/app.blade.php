@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Wahana </title>
 
-    <style>
-    @import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css");
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css">
     @livewireStyles
+
     @wireUiScripts
     @livewireScripts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -17,7 +16,6 @@
 
 </head>
 <body class="bg-gray-50">
-    {{-- SIDEBAR --}}
 
     <x-sidebar />
 
@@ -26,8 +24,6 @@
             {{ $slot }}
         </div>
     </main>
-
-    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
 
 </body>
 </html>

@@ -48,3 +48,9 @@ Route::get('/vending', function () {
         'title' => 'Vending Machine'
     ]);
 })->name('vending-machine');
+
+Route::get('/restaurant', function () {
+    return view('pages.restaurant', [
+        'title' => 'Restaurant'
+    ]);
+})->name('restaurant');
