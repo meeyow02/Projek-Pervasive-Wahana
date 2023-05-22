@@ -50,8 +50,8 @@
                     Dashboard
                 </x-navigation-links>
 
-                <x-navigation-links icon="mdi-go-kart" >
-                    Rides
+                <x-navigation-links icon="mdi-go-kart" :href="route('attractions')" :active="request()->routeIs('attractions')">
+                    Attractions
                 </x-navigation-links>
 
                 <x-navigation-links icon="mdi-silverware-variant" :href="route('restaurant')" :active="request()->routeIs('restaurant')">

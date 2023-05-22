@@ -54,3 +54,9 @@ Route::get('/restaurant', function () {
         'title' => 'Restaurant'
     ]);
 })->name('restaurant');
+
+Route::get('/attractions', function () {
+    return view('pages.attractions', [
+        'title' => 'Attractions'
+    ]);
+})->name('attractions');
