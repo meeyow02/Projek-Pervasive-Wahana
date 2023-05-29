@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class HomeStyles extends Component
+class GuestLayout  extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class HomeStyles extends Component
      */
     public function render()
     {
-        return view('components.home-styles');
+        return view('layouts.guest');
     }
 }

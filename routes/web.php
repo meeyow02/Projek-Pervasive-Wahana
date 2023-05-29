@@ -13,50 +13,55 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home'
-    ]);
-})->name('home');
+Route::redirect('/', 'login');
 
-Route::get('/setting', function () {
-    return view('pages.setting', [
-        'title' => 'Setting'
-    ]);
-})->name('setting');
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', function () {
+        return view('pages.home', [
+            'title' => 'Home'
+        ]);
+    })->name('home');
 
-Route::get('/balance', function () {
-    return view('pages.balance', [
-        'title' => 'Balance'
-    ]);
-})->name('balance');
+    Route::get('/setting', function () {
+        return view('pages.setting', [
+            'title' => 'Setting'
+        ]);
+    })->name('setting');
 
-Route::get('/top-up', function () {
-    return view('pages.topup', [
-        'title' => 'Top Up'
-    ]);
-})->name('topup');
+    Route::get('/balance', function () {
+        return view('pages.balance', [
+            'title' => 'Balance'
+        ]);
+    })->name('balance');
 
-Route::get('/pricing', function () {
-    return view('pages.pricing', [
-        'title' => 'Pricing'
-    ]);
-})->name('pricing');
+    Route::get('/top-up', function () {
+        return view('pages.topup', [
+            'title' => 'Top Up'
+        ]);
+    })->name('topup');
 
-Route::get('/vending', function () {
-    return view('pages.vending', [
-        'title' => 'Vending Machine'
-    ]);
-})->name('vending-machine');
+    Route::get('/pricing', function () {
+        return view('pages.pricing', [
+            'title' => 'Pricing'
+        ]);
+    })->name('pricing');
 
-Route::get('/restaurant', function () {
-    return view('pages.restaurant', [
-        'title' => 'Restaurant'
-    ]);
-})->name('restaurant');
+    Route::get('/vending', function () {
+        return view('pages.vending', [
+            'title' => 'Vending Machine'
+        ]);
+    })->name('vending-machine');
 
-Route::get('/attractions', function () {
-    return view('pages.attractions', [
-        'title' => 'Attractions'
-    ]);
-})->name('attractions');
+    Route::get('/restaurant', function () {
+        return view('pages.restaurant', [
+            'title' => 'Restaurant'
+        ]);
+    })->name('restaurant');
+
+    Route::get('/attractions', function () {
+        return view('pages.attractions', [
+            'title' => 'Attractions'
+        ]);
+    })->name('attractions');
+});
+
